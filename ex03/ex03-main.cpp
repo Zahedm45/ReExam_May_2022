@@ -2,7 +2,7 @@
 #include "ex03-library.h"
 using namespace std;
 
-int main() {
+int main3() {
     Hotel hotel = Hotel();
 
     cout << "Initial hotel occupancy:" << endl;

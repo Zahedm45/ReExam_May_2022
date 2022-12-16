@@ -1,9 +1,8 @@
-/*
 #include <iostream>
 #include "ex04-library.h"
 using namespace std;
 
-int main4() {
+int main() {
     SensorBuffer *sb = new SensorBuffer(-1, 5, 10);
     Buffer *b = sb; // Just an alias for 'sb' above, but using the superclass
 
@@ -27,4 +26,3 @@ int main4() {
     delete sb;
     return 0;
 }
-*/
