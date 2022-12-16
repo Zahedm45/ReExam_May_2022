@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ex01-library.h"
 using namespace std;
-int main() {
+int main1() {
     Square **c = nullptr;
 
     // Here there is some HIDDEN CODE that allocates the chessboard 'c'.

@@ -5,6 +5,22 @@ using namespace std;
 // Task 2(a).  Implement this function
 void shift(Passenger *q, unsigned int n) {
     // Write your code here
+
+
+    int counter = 0;
+    Passenger *temp = q;
+    while (temp != nullptr) {
+
+/*        if (counter+1 == n) {
+        }
+        counter++;*/
+
+        temp->row = temp->row + n;
+        temp = temp->next;
+    }
+
+
+
 }
 
 // Task 2(b).  Implement this function

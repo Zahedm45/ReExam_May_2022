@@ -3,7 +3,7 @@
 #include "ex02-library.h"
 using namespace std;
 
-int main2() {
+int main() {
     Passenger p0 = {"Alfred A.", 123, 5, 'A', nullptr};
     Passenger p1 = {"Barbara B.", 321, 1, 'B', &p0};
     Passenger p2 = {"Charlie C.", 456, 10, 'D', &p1};
