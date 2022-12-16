@@ -22,6 +22,41 @@ Hotel::Hotel() {
 // Task 3(a).  Implement this method
 void Hotel::renameRoom(string oldName, string newName) {
     // Write your code here
+
+    bool contain_old_name = false;
+
+    for (string str: roomNames) {
+        if (str == oldName) contain_old_name = true;
+        if (str == newName) return;
+    }
+
+    if (!contain_old_name) return;
+
+
+    for (int i = 0; i < roomNames.size(); ++i) {
+        if (roomNames[i] == oldName ) {
+            roomNames[i] = newName;
+            break;
+        }
+    }
+
+
+    try {
+        Guest guest = roomOccupancy.at(oldName);
+        roomOccupancy.erase(oldName);
+        roomOccupancy[newName] = guest;
+
+    } catch (out_of_range&) {
+        cout << "not found" << endl;
+    }
+
+
+
+
+
+
+
+
 }
 
 // Task 3(b).  Implement this method
