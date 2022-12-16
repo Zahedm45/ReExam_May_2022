@@ -47,12 +47,8 @@ void Hotel::renameRoom(string oldName, string newName) {
         roomOccupancy[newName] = guest;
 
     } catch (out_of_range&) {
-        cout << "not found" << endl;
+        //cout << "not found" << endl;
     }
-
-
-
-
 
 
 
@@ -62,11 +58,42 @@ void Hotel::renameRoom(string oldName, string newName) {
 // Task 3(b).  Implement this method
 void Hotel::removeGuest(string roomName, string guestName, string guestId) {
     // Write your code here
+
+    try {
+        Guest guest = roomOccupancy.at(roomName);
+
+        if (guest.id == guestId && guest.name == guestName) {
+            roomOccupancy.erase(roomName);
+        }
+
+    } catch (out_of_range&) {
+        //cout << "not found" << endl;
+    }
+
 }
 
 // Task 3(c).  Implement this method
 void Hotel::findRoomByGuestId(vector<string> guestIds) {
     // Write your code here
+
+
+    for (const auto &str: roomNames) {
+
+        try {
+            Guest guest = roomOccupancy.at(str);
+
+            for (const auto &g_id: guestIds) {
+                if (g_id == guest.id) {
+                    cout << str << endl;
+                }
+            }
+
+        } catch (out_of_range&) {
+            //cout << "not found" << endl;
+        }
+    }
+
+
 }
 
 // Do not modify
