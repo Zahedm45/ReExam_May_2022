@@ -1,54 +1,69 @@
 #include <iostream>
 #include "ex01-library.h"
 using namespace std;
-
 int main() {
-    int m = 5, n = 5;
-    Square **c = createChessboard(m, n);
-/*    c[0][0] = {queen, black};
-    c[0][3] = {king, black};
-    c[2][0] = {king, white};
-    c[1][2] = {queen, white};*/
-    c[2][2] = {king, black};
+    Square **c = nullptr;
 
-    cout << "Chessboard:" << endl;
-    displayChessboard(c, m, n);
-    bool val = move(c, m, n, 2, 2, 4, 2);
-    cout << val << endl;
+    // Here there is some HIDDEN CODE that allocates the chessboard 'c'.
+    // If you have completed task (a), you can run this code on your computer
+    // by uncommenting the following line:
+    c = createChessboard(4, 3);
 
-    cout << "Chessboard:" << endl;
-    displayChessboard(c, m, n);
+    c[0][0] = {queen, white};
+    c[0][2] = {king, white};
+    c[3][0] = {queen, black};
+    c[2][1] = {king, black};
+    cout << "Chessboard 'c':" << endl;
 
+    // Here there is some HIDDEN CODE that displays the chessboard 'c'.
+    // If you have completed task (b), you can run this code on your computer
+    // by uncommenting the following line:
+     displayChessboard(c, 4, 3);
+    cout << "Is the piece in (0,2) threatened? ";
+    if (threatened(c, 4, 3, 0, 2)) {
+        cout << "Yes!" << endl;
+    } else {
+        cout << "No!" << endl;
+    }
+    cout << "Is the piece in (0,0) threatened? ";
+    if (threatened(c, 4, 3, 0, 0)) {
+        cout << "Yes!" << endl;
+    } else {
+        cout << "No!" << endl;
+    }
 
+    /*Square **d = nullptr;
 
+    // Here there is some HIDDEN CODE that allocates the chessboard 'd'.
+    // If you have completed task (a), you can run this code on your computer
+    // by uncommenting the following line:
+    // d = createChessboard(6, 4);
 
-    /* cout << "Is the piece in (0,0) threatened? ";
-     if (threatened(c, 3, 4, 0, 0)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
+    d[1][0] = {queen, white};
+    d[0][2] = {king, white};
+    d[3][2] = {queen, black};
+    d[5][3] = {king, black};
+    cout << endl << "Chessboard 'd':" << endl;
 
-     cout << "Can we move from (0,0) to (0,3)? ";
-     if (move(c, 3, 4, 0, 0, 0, 3)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
+    // Here there is some HIDDEN CODE that displays the chessboard 'd'.
+    // If you have completed task (b), you can run this code on your computer
+    // by uncommenting the following line:
+    // displayChessboard(d, 6, 4);
 
-     cout << "Can we move from (0,0) to (0,2)? ";
-     if (move(c, 3, 4, 0, 0, 0, 2)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
+    cout << "Is the piece in (1,0) threatened? ";
+    if (threatened(d, 6, 4, 1, 0)) {
+        cout << "Yes!" << endl;
+    } else {
+        cout << "No!" << endl;
+    }
+    cout << "Is the piece in (5,3) threatened? ";
+    if (threatened(d, 6, 4, 5, 3)) {
+        cout << "Yes!" << endl;
+    } else {
+        cout << "No!" << endl;
+    }
 
-     cout << "Can we move from (2,0) to (2,2)? ";
-     if (move(c, 3, 4, 2, 0, 2, 2)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
-
-     cout << "Can we move from (1,2) to (0,3)? ";
-     if (move(c, 3, 4, 1, 2, 0, 3)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
-
-     cout << endl << "The chessboard is now:" << endl;
-     displayChessboard(c, 3, 4);
-
-     cout << "Is the piece in (2,0) threatened? ";
-     if (threatened(c, 3, 4, 2, 0)) { cout << "Yes!" << endl; }
-     else { cout << "No!" << endl; }
-
-     deleteChessboard(c, 3);*/
+    deleteChessboard(c, 4);
+    deleteChessboard(d, 6);*/
     return 0;
 }
