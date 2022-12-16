@@ -10,7 +10,7 @@ int main() {
     Passenger p3 = {"Daria D.", 654, 22, 'C', &p2};
     Passenger p4 = {"Emil E.", 789, 10, 'E', &p3};
     Passenger p5 = {"Fiona F.", 987, 21, 'F', &p4};
-    
+
     Passenger *q = &p5;
 
     cout << "The passengers queue is: " << endl;
